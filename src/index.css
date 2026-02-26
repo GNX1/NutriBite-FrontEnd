@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary-start: #A100FF;
+  --color-primary-end: #8B5CF6;
+  --color-success-start: #10B981;
+  --color-success-end: #059669;
+  --color-warning-start: #F59E0B;
+  --color-warning-end: #D97706;
+  --color-danger-start: #EF4444;
+  --color-danger-end: #DC2626;
+  --color-glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+@layer utilities {
+  .bg-glass {
+    background: var(--color-glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-slate-50 text-slate-800;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reduced motion fallback for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
