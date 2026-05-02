@@ -88,7 +88,7 @@ export const LandingPage: React.FC = () => {
 
             if (authMode === 'login') {
                 // 🔐 LOGIN
-                res = await fetch("http://localhost:8080/api/auth/login", {
+                res = await fetch(`https://terrific-empathy-production-6b32.up.railway.app/api/auth/${authMode}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -131,7 +131,7 @@ export const LandingPage: React.FC = () => {
 
             } else {
                 // 🧾 SIGNUP
-                res = await fetch("http://localhost:8080/api/auth/signup", {
+                res = await fetch(`https://terrific-empathy-production-6b32.up.railway.app/api/auth/${authMode}`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
